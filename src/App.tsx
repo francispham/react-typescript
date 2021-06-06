@@ -7,7 +7,7 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <Header title='ReactTS' isActive />
+      <Header user={{ name: 'Francis'  }} title='ReactTS' isActive />
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
