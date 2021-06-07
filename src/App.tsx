@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { Header } from './components/Header';
+import { Button } from './components/Button';
+
 import logo from './logo.svg';
 import './App.css';
 
@@ -8,6 +10,22 @@ function App() {
   return (
     <div className="App">
       <Header user={{ name: 'Francis'  }} title='ReactTS' isActive />
+
+      <Button 
+        onMouseUp={() => {
+          console.log('Mouse Up');
+        }}
+        onMouseDown={value => {
+          console.log(value);
+        }}
+        onMouseOut={() => {
+          console.log('Mouse Out');
+        }}
+        onMouseOver={value => {
+          console.log(value);
+        }}
+      />
+
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
