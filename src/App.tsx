@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Header } from './components/Header';
 import { Inputs } from './components/Inputs';
+import { ReducerButtons } from './components/ReducerButtons';
 import { Button, ButtonFC } from './components/Button';
 
 import logo from './logo.svg';
@@ -13,6 +14,7 @@ function App() {
   return (
     <div className="App">
       <Header user={{ name: 'Francis'  }} title='ReactTS' isActive />
+      <ReducerButtons />
       <Inputs />
       <Button 
         onMouseUp={() => {
