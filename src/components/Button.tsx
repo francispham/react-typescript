@@ -14,6 +14,12 @@ type Props = {
   onChange?: (e: React.FormEvent<HTMLInputElement>) => void;
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
+
+type PropsFC = {
+  // children: string  // Not Best Practice. Use React Functional Component instead!
+  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+}
+
 export const Button = ({ 
   onClick, onMouseOver, onMouseDown, onMouseUp, onMouseOut 
 }: Props) => {
@@ -23,5 +29,9 @@ export const Button = ({
           onMouseOut={() => onMouseOut()}
           onMouseOver={() => onMouseOver('Mouse Over')}
           onClick={onClick}
-        >Submit</button>;
+        >Simple Button</button>;
+};
+
+export const ButtonFC: React.FC<PropsFC> = ({ onClick, children }) => {
+  return <button onClick={onClick}>{children}</button>
 };

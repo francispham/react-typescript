@@ -1,12 +1,14 @@
 import React from 'react';
 
 import { Header } from './components/Header';
-import { Button } from './components/Button';
+import { Button, ButtonFC } from './components/Button';
 
 import logo from './logo.svg';
 import './App.css';
 
 function App() {
+  const [show, setShow] = React.useState(false);
+
   return (
     <div className="App">
       <Header user={{ name: 'Francis'  }} title='ReactTS' isActive />
@@ -31,7 +33,15 @@ function App() {
       />
 
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
+        <ButtonFC
+          onClick={e => {
+            e.preventDefault();
+            setShow(!show);
+          }}
+        >
+          
+          {show ? <img src={logo} className="App-logo" alt="logo" /> : 'Child Button'}
+        </ButtonFC>
         <p>
           Edit <code>src/App.tsx</code> and save to reload.
         </p>
