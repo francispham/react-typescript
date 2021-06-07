@@ -24,6 +24,10 @@ function App() {
         onMouseOver={value => {
           console.log(value);
         }}
+        onClick={e => {
+          e.preventDefault();
+          console.log('e:', e);
+        }}
       />
 
       <header className="App-header">
