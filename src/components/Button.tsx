@@ -11,7 +11,7 @@ type Props = {
   // 1. Basic Mouse Event
   onDblClick?: (e: React.MouseEvent) => void; 
   // 2. Mouse Event with More Specificities
-  onChange?: (e: React.FormEvent<HTMLInputElement>) => void;
+  onChange?: (e: React.FormEvent<HTMLInputElement>) => void;    // <HTMLInputElement> is Generic Type
   onClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -32,6 +32,6 @@ export const Button = ({
         >Simple Button</button>;
 };
 
-export const ButtonFC: React.FC<PropsFC> = ({ onClick, children }) => {
+export const ButtonFC: React.FC<PropsFC> = ({ onClick, children }) => {   // <PropsFC> is Generic Type
   return <button onClick={onClick}>{children}</button>
 };

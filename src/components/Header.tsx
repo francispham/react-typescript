@@ -7,6 +7,8 @@ type User = {
 type Props = {
   title: string;      // Required
   isActive?: boolean; // Optional Props
+  typeGeneric?: Array<string>;
+  sameAsAboveType?: string[];
   /* Basic Types:
     number: number;
     status: 'loading' | 'loaded';
