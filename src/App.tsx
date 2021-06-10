@@ -6,6 +6,7 @@ import GlobalProvider from './components/GlobalState';
 import { ContextButtons } from './components/ContextButtons';
 import { ReducerButtons } from './components/ReducerButtons';
 import { Button, ButtonFC } from './components/Button';
+import ClassComponent from './components/ClassComponent';
 
 import logo from './logo.svg';
 import './App.css';
@@ -17,6 +18,7 @@ function App() {
     <GlobalProvider>
       <div className="App">
         <Header user={{ name: 'Francis'  }} title='ReactTS' isActive />
+        <ClassComponent title='Class Title' />
         <ContextButtons />
         <ReducerButtons />
         <Inputs />
