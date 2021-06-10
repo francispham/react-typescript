@@ -1,4 +1,5 @@
 import React, { useReducer, useRef, useContext } from 'react'
+import styled from 'styled-components';
 
 import { GlobalContext } from './GlobalState';
 import { useClickOutside } from '../hooks/useClickOutside';
@@ -45,7 +46,7 @@ export const ReducerButtons = () => {
   });
 
   return (
-    <div ref={ref}>
+    <Wrapper ref={ref}>
       <h2>{globalValue ? 'GlobalValue is true from GlobalState' : 'No Global Value is false'}</h2>
       <h2>Current State of rValue: {state?.rValue.toString()}</h2>
       <button onClick={() => dispatch({ type: 'I'})}>Action I</button>
@@ -54,6 +55,10 @@ export const ReducerButtons = () => {
       {/* Action IV should be invalid:
         <button onClick={() => dispatch({ type: 'IV'})}>Action III</button> 
       */}
-    </div>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div`
+  background: pink;
+`
