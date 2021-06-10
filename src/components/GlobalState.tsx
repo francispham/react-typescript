@@ -9,8 +9,9 @@ export const initialValues = {
 
 export const GlobalContext = createContext(initialValues);
 
-type State = {
-  globalValue: boolean
+// https://www.educba.com/typescript-type-vs-interface/
+interface State { //  Very Similar to type in ReactJS
+  globalValue: boolean;
 };
 
 type Action = { type: 'ON' } | { type: 'OFF' } 
