@@ -46,7 +46,7 @@ export const ReducerButtons = () => {
 
   return (
     <div ref={ref}>
-      <h2>{globalValue ? 'GlobalValue iis True from useContext' : 'No Global Value is False'}</h2>
+      <h2>{globalValue ? 'GlobalValue is true from GlobalState' : 'No Global Value is false'}</h2>
       <h2>Current State of rValue: {state?.rValue.toString()}</h2>
       <button onClick={() => dispatch({ type: 'I'})}>Action I</button>
       <button onClick={() => dispatch({ type: 'II'})}>Action II</button>

@@ -2,7 +2,8 @@ import React from 'react';
 
 import { Header } from './components/Header';
 import { Inputs } from './components/Inputs';
-import { GlobalContext, initialValues } from './components/GlobalState';
+import GlobalProvider from './components/GlobalState';
+import { ContextButtons } from './components/ContextButtons';
 import { ReducerButtons } from './components/ReducerButtons';
 import { Button, ButtonFC } from './components/Button';
 
@@ -13,9 +14,10 @@ function App() {
   const [show, setShow] = React.useState(false);
 
   return (
-    <GlobalContext.Provider value={initialValues}>
+    <GlobalProvider>
       <div className="App">
         <Header user={{ name: 'Francis'  }} title='ReactTS' isActive />
+        <ContextButtons />
         <ReducerButtons />
         <Inputs />
         <Button 
@@ -60,7 +62,7 @@ function App() {
           </a>
         </header>
       </div>
-    </GlobalContext.Provider>
+    </GlobalProvider>
   );
 }
 
