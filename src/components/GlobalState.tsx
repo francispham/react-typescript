@@ -1,4 +1,3 @@
-import { globalEval } from 'cypress/types/jquery';
 import { createContext, useReducer } from 'react';
 
 export const initialValues = {
@@ -30,7 +29,6 @@ function reducer(state: State, action: Action) {
 
 const GlobalProvider: React.FC = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialValues);
-
 
   return (
     <GlobalContext.Provider 

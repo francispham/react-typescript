@@ -3,7 +3,6 @@ import { useContext } from 'react'
 import { GlobalContext } from './GlobalState';
 
 export const ContextButtons = () => {
-
   const context = useContext(GlobalContext);
   const { globalValue, turnOn, turnOff } = context;
 
