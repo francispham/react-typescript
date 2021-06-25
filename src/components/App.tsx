@@ -1,15 +1,15 @@
 import React from 'react';
 
-import { Header } from './components/Header';
-import { Inputs } from './components/Inputs';
-import GlobalProvider from './components/GlobalState';
-import { ContextButtons } from './components/ContextButtons';
-import { ReducerButtons } from './components/ReducerButtons';
-import { Button, ButtonFC } from './components/Button';
-import ClassComponent from './components/ClassComponent';
+import { Header } from './Header';
+import { Inputs } from './Inputs';
+import GlobalProvider from './GlobalState';
+import { ContextButtons } from './ContextButtons';
+import { ReducerButtons } from './ReducerButtons';
+import { Button, ButtonFC } from './Button';
+import ClassComponent from './ClassComponent';
 
-import logo from './logo.svg';
-import './App.css';
+import logo from '../logo.svg';
+import '../css/App.css';
 
 function App() {
   const [show, setShow] = React.useState(false);
