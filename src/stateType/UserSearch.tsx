@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const users = [
+export const users = [
   { name: 'Francis', age: 20 },
   { name: 'Kate', age: 19 },
   { name: 'Phong', age: 21 }

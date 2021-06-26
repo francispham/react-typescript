@@ -6,9 +6,9 @@ import GlobalProvider from './GlobalState';
 import { ContextButtons } from './ContextButtons';
 import { ReducerButtons } from './ReducerButtons';
 import { Button, ButtonFC } from './Button';
-import ClassComponent from './ClassComponent';
+import ClassComponent, { ClassComponentInterface } from './ClassComponent';
 import GuestList from '../stateType/GuestList';
-import UserSearch from '../stateType/UserSearch';
+import UserSearch, { users } from '../stateType/UserSearch';
 
 import logo from '../logo.svg';
 import '../css/App.css';
@@ -25,6 +25,8 @@ function App() {
         <>
           <Header user={{ name: 'Francis'  }} title='ReactTS' isActive />
           <ClassComponent title='Class Title' />
+          <ClassComponentInterface users={users} />
+
           <ContextButtons />
           <ReducerButtons />
           <Inputs />
