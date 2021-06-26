@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 
 export const users = [
   { name: 'Francis', age: 20 },
@@ -7,8 +7,13 @@ export const users = [
 ];
 
 const UserSearch: React.FC = () => {
+  const inputRef = useRef<HTMLInputElement | null>(null); // Every Important to Remember!!!
   const [name, setName] = useState<string>('');
   const [user, setUser] = useState<{name: string, age: number | undefined}>();  // Type Unions
+
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     console.log('event:', event);
@@ -28,7 +33,7 @@ const UserSearch: React.FC = () => {
     <div>
       <div draggable onDragStart={handleDragStart}>Drag ME!</div>
       <h3>User Search</h3>
-      <input value={name} onChange={handleChange} />
+      <input ref={inputRef} value={name} onChange={handleChange} />
       <button onClick={handleClick}>Find User</button>
       <div>Name: {user?.name}</div>
       <div>Age: {user?.age}</div>
