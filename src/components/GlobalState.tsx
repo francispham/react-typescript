@@ -27,9 +27,7 @@ function reducer(state: State, action: Action) {
   }
 }
 
-const GlobalProvider: React.FC<React.PropsWithChildren<ReactNode>> = ({
-  children,
-}) => {
+const GlobalProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialValues);
 
   return (
