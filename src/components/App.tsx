@@ -11,8 +11,8 @@ import GuestList from "../stateType/GuestList";
 import UserSearch from "../stateType/UserSearch";
 
 import "../css/App.css";
-import logo from "../logo.svg";
 import { users } from "../constants";
+import logo from "../assets/logo.svg";
 
 function App() {
   const [show, setShow] = React.useState<boolean>(false);
