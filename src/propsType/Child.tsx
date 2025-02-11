@@ -15,7 +15,7 @@ interface ChildFCProps {
   children: string; // Optional
 }
 
-export const Child = ({ color, onClick } : ChildProps) => {
+export const Child = ({ color, onClick }: ChildProps) => {
   return (
     <div>
       {color}
@@ -24,7 +24,7 @@ export const Child = ({ color, onClick } : ChildProps) => {
   );
 };
 
-export const ValidChild = ({ color, onClick, children } : ValidChildProps) => {
+export const ValidChild = ({ color, onClick, children }: ValidChildProps) => {
   return (
     <div>
       {color}
@@ -44,7 +44,11 @@ export const ChildFC: React.FC<ChildFCProps> = ({ color, onClickFC }) => {
   );
 };
 
-export const ChildrenFC: React.FC<ChildFCProps> = ({ color, onClickFC, children }) => {
+export const ChildrenFC: React.FC<ChildFCProps> = ({
+  color,
+  onClickFC,
+  children,
+}) => {
   return (
     <div>
       {color}

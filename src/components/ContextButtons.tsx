@@ -1,6 +1,6 @@
-import { useContext } from 'react'
+import { useContext } from "react";
 
-import { GlobalContext } from './GlobalState';
+import { GlobalContext } from "./GlobalState";
 
 export const ContextButtons = () => {
   const context = useContext(GlobalContext);
@@ -12,5 +12,5 @@ export const ContextButtons = () => {
       <button onClick={turnOn}>ON Button</button>
       <button onClick={turnOff}>OFF Button</button>
     </div>
-  )
-}
+  );
+};

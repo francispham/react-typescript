@@ -1,9 +1,9 @@
 type User = {
   name: string;
-}
+};
 
 type Props = {
-  title: string;      // Required
+  title: string; // Required
   isActive?: boolean; // Optional Props
   typeGeneric?: Array<string>;
   sameAsAboveType?: string[];
@@ -17,7 +17,7 @@ type Props = {
     func: () => void;
     */
   user: User;
-}
+};
 
 export const Header = ({ title, isActive = false, user }: Props) => {
   return (
@@ -26,5 +26,5 @@ export const Header = ({ title, isActive = false, user }: Props) => {
       {isActive && <h3>Active</h3>}
       <h3>Current User: {user.name}</h3>
     </div>
-  )
-}
+  );
+};

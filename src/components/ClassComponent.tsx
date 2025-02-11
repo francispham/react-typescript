@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component } from "react";
 
 type Props = {
   title: string;
@@ -13,29 +13,32 @@ interface User {
 }
 
 interface PropsInterface {
-  users: User[]
+  users: User[];
 }
 
 interface StateInterface {
   name: string;
-  user: User | undefined
-};
+  user: User | undefined;
+}
 
-export class ClassComponentInterface extends Component<PropsInterface, StateInterface> {
+export class ClassComponentInterface extends Component<
+  PropsInterface,
+  StateInterface
+> {
   state: StateInterface = {
-    name: '',
-    user: undefined
-  }
+    name: "",
+    user: undefined,
+  };
   handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    this.setState({ name: event.target.value })
-  }
+    this.setState({ name: event.target.value });
+  };
   handleClick = () => {
     const { users } = this.props;
-    const { name  } = this.state;
-    const foundUser = users.find(user => user.name === name);
+    const { name } = this.state;
+    const foundUser = users.find((user) => user.name === name);
 
     this.setState({ user: foundUser });
-  }
+  };
   render() {
     const { name, user } = this.state;
     return (
@@ -48,15 +51,11 @@ export class ClassComponentInterface extends Component<PropsInterface, StateInte
       </div>
     );
   }
-};
+}
 
 class ClassComponent extends Component<Props, State> {
   render() {
-    return (
-      <div>
-        I am a Class Component with {this.props.title}
-      </div>
-    );
+    return <div>I am a Class Component with {this.props.title}</div>;
   }
 }
 

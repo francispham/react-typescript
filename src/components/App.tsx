@@ -8,10 +8,11 @@ import { ReducerButtons } from "./ReducerButtons";
 import { Button, ButtonFC } from "./Button";
 import ClassComponent, { ClassComponentInterface } from "./ClassComponent";
 import GuestList from "../stateType/GuestList";
-import UserSearch, { users } from "../stateType/UserSearch";
+import UserSearch from "../stateType/UserSearch";
 
-import logo from "../logo.svg";
 import "../css/App.css";
+import logo from "../logo.svg";
+import { users } from "../constants";
 
 function App() {
   const [show, setShow] = React.useState<boolean>(false);
