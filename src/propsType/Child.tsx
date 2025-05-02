@@ -19,7 +19,12 @@ export const Child = ({ color, onClick }: ChildProps) => {
   return (
     <div>
       {color}
-      <button onClick={onClick}>Click</button>
+      <button
+        className="flex items-center bg-blue-500 px-4 py-3 m-1 rounded-2xl text-white hover:bg-blue-400"
+        onClick={onClick}
+      >
+        Click
+      </button>
     </div>
   );
 };
@@ -29,7 +34,12 @@ export const ValidChild = ({ color, onClick, children }: ValidChildProps) => {
     <div>
       {color}
       {children}
-      <button onClick={onClick}>Click</button>
+      <button
+        className="flex items-center bg-blue-500 px-4 py-3 m-1 rounded-2xl text-white hover:bg-blue-400"
+        onClick={onClick}
+      >
+        Click
+      </button>
     </div>
   );
 };
@@ -39,7 +49,12 @@ export const ChildFC: React.FC<ChildFCProps> = ({ color, onClickFC }) => {
   return (
     <div>
       {color}
-      <button onClick={onClickFC}>Click</button>
+      <button
+        className="flex items-center bg-blue-500 px-4 py-3 m-1 rounded-2xl text-white hover:bg-blue-400"
+        onClick={onClickFC}
+      >
+        Click
+      </button>
     </div>
   );
 };
@@ -53,7 +68,12 @@ export const ChildrenFC: React.FC<ChildFCProps> = ({
     <div>
       {color}
       {children}
-      <button onClick={onClickFC}>Click</button>
+      <button
+        className="flex items-center bg-blue-500 px-4 py-3 m-1 rounded-2xl text-white hover:bg-blue-400"
+        onClick={onClickFC}
+      >
+        Click
+      </button>
     </div>
   );
 };

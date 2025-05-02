@@ -21,10 +21,12 @@ type Props = {
 
 export const Header = ({ title, isActive = false, user }: Props) => {
   return (
-    <div>
-      <h1>{title}</h1>
-      {isActive && <h3>Active</h3>}
-      <h3>Current User: {user.name}</h3>
-    </div>
+    <section className="p-3 pl-0 text-center">
+      <h1 className="font-bold">{title}</h1>
+      {}
+      <h3 className="font-bold">
+        <span>{isActive ? "Active" : "Inactive"}</span> User: {user.name}
+      </h3>
+    </section>
   );
 };

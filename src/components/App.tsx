@@ -8,7 +8,6 @@ import { ContextButtons } from "./ContextButtons";
 import { ReducerButtons } from "./ReducerButtons";
 import ClassComponent, { ClassComponentInterface } from "./ClassComponent";
 
-import "../css/App.css";
 import { users } from "../constants";
 import GuestList from "../stateType/GuestList";
 import UserSearch from "../stateType/UserSearch";
@@ -17,44 +16,11 @@ import viteLogo from "/vite.svg";
 import reactLogo from "../assets/react.svg";
 
 function App() {
-  const [showGlobal, setShowGlobal] = React.useState<boolean>(false);
+  const [showGlobal, setShowGlobal] = React.useState<boolean>(true);
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <div>
-          <a href="https://vite.dev" target="_blank">
-            <img src={viteLogo} className="App-logo" alt="Vite logo" />
-          </a>
-          <a href="https://react.dev" target="_blank">
-            <img src={reactLogo} className="App-logo" alt="React logo" />
-          </a>
-        </div>
-
-        <UserSearch />
-        <GuestList />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-
-        <ButtonFC
-          onClick={(e) => {
-            e.preventDefault();
-            setShowGlobal(!showGlobal);
-          }}
-        >
-          {showGlobal ? "Show" : "Hide"} Global Content
-        </ButtonFC>
-      </header>
-
+    <div className="app">
+      {/* Global State */}
       {!showGlobal && (
         <GlobalProvider>
           <>
@@ -67,17 +33,52 @@ function App() {
             <Inputs />
             <Button
               onMouseUp={() => console.log("Mouse Up")}
-              onMouseDown={(value) => console.log(value)}
+              onMouseDown={(value) => console.log("onMouseDown", value)}
               onMouseOut={() => console.log("Mouse Out")}
-              onMouseOver={(value) => console.log(value)}
+              onMouseOver={(value) => console.log("onMouseOver", value)}
               onClick={(event) => {
                 event.preventDefault();
-                console.log("Event:", event);
+                console.log("onClick Event:", event);
               }}
             />
           </>
         </GlobalProvider>
       )}
+      <header className="flex flex-col items-center">
+        <a href="https://react.dev" target="_blank">
+          <img src={reactLogo} className="app-logo" alt="React logo" />
+        </a>
+      </header>
+
+      <p> Global State {showGlobal ? "Off" : "On"}</p>
+      <ButtonFC
+        onClick={(e) => {
+          e.preventDefault();
+          setShowGlobal(!showGlobal);
+        }}
+      >
+        Functional Component Button
+      </ButtonFC>
+
+      <UserSearch />
+      <GuestList />
+
+      <footer className="flex flex-col items-center">
+        <a href="https://vite.dev" target="_blank">
+          <img src={viteLogo} className="app-logo" alt="Vite logo" />
+        </a>
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="app-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </footer>
     </div>
   );
 }

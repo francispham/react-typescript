@@ -29,18 +29,26 @@ export const Button = ({
 }: Props) => {
   return (
     <button
+      className="flex items-center bg-blue-500 px-4 py-3 m-1 rounded-2xl text-white hover:bg-blue-400"
       onMouseUp={() => onMouseUp()}
       onMouseDown={() => onMouseDown("Mouse Down")}
       onMouseOut={() => onMouseOut()}
       onMouseOver={() => onMouseOver("Mouse Over")}
       onClick={onClick}
     >
-      Simple Button
+      Button with Mouse Events
     </button>
   );
 };
 
 export const ButtonFC: React.FC<PropsFC> = ({ onClick, children }) => {
   // <PropsFC> is Generic Type
-  return <button onClick={onClick}>{children}</button>;
+  return (
+    <button
+      className="flex items-center bg-blue-500 px-4 py-3 m-1 rounded-2xl text-white hover:bg-blue-400"
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
 };

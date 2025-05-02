@@ -1,5 +1,4 @@
 import { useReducer, useRef, useContext } from "react";
-import styled from "styled-components";
 
 import { useClickOutside } from "../hooks/useClickOutside";
 import { GlobalContext } from "./GlobalContext";
@@ -43,23 +42,36 @@ export const ReducerButtons = () => {
   });
 
   return (
-    <Wrapper ref={ref}>
+    <section className="p-3 pl-0" ref={ref}>
       <h2>
         {globalValue
           ? "GlobalValue is true from GlobalState"
           : "No Global Value is false"}
       </h2>
-      <h2>Current State of rValue: {state?.rValue.toString()}</h2>
-      <button onClick={() => dispatch({ type: "I" })}>Action I</button>
-      <button onClick={() => dispatch({ type: "II" })}>Action II</button>
-      <button onClick={() => dispatch({ type: "III" })}>Action III</button>
+      <h2 className="p-3 pl-0">
+        Current State of rValue: {state?.rValue.toString()}
+      </h2>
+      <button
+        className="flex items-center bg-blue-500 px-4 py-3 m-1 rounded-2xl text-white hover:bg-blue-400"
+        onClick={() => dispatch({ type: "I" })}
+      >
+        Action I ReducerButton
+      </button>
+      <button
+        className="flex items-center bg-blue-500 px-4 py-3 m-1 rounded-2xl text-white hover:bg-blue-400"
+        onClick={() => dispatch({ type: "II" })}
+      >
+        Action II ReducerButton
+      </button>
+      <button
+        className="flex items-center bg-blue-500 px-4 py-3 m-1 rounded-2xl text-white hover:bg-blue-400"
+        onClick={() => dispatch({ type: "III" })}
+      >
+        Action III ReducerButton
+      </button>
       {/* Action IV should be invalid:
         <button onClick={() => dispatch({ type: 'IV'})}>Action III</button> 
       */}
-    </Wrapper>
+    </section>
   );
 };
-
-const Wrapper = styled.div`
-  background: pink;
-`;
