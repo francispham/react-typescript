@@ -3,80 +3,81 @@ import React from "react";
 import { Header } from "./Header";
 import { Inputs } from "./Inputs";
 import GlobalProvider from "./GlobalState";
+import { Button, ButtonFC } from "./Button";
 import { ContextButtons } from "./ContextButtons";
 import { ReducerButtons } from "./ReducerButtons";
-import { Button, ButtonFC } from "./Button";
 import ClassComponent, { ClassComponentInterface } from "./ClassComponent";
-import GuestList from "../stateType/GuestList";
-import UserSearch from "../stateType/UserSearch";
 
 import "../css/App.css";
 import { users } from "../constants";
-import logo from "../assets/logo.svg";
+import GuestList from "../stateType/GuestList";
+import UserSearch from "../stateType/UserSearch";
+
+import viteLogo from "/vite.svg";
+import reactLogo from "../assets/react.svg";
 
 function App() {
-  const [show, setShow] = React.useState<boolean>(false);
+  const [showGlobal, setShowGlobal] = React.useState<boolean>(false);
 
   return (
     <div className="App">
-      <h2>Props, State & Event Handlers Typings</h2>
-      <UserSearch />
-      <GuestList />
-      <GlobalProvider>
-        <>
-          <Header user={{ name: "Francis" }} title="ReactTS" isActive />
-          <ClassComponent title="Class Title" />
-          <ClassComponentInterface users={users} />
+      <header className="App-header">
+        <div>
+          <a href="https://vite.dev" target="_blank">
+            <img src={viteLogo} className="App-logo" alt="Vite logo" />
+          </a>
+          <a href="https://react.dev" target="_blank">
+            <img src={reactLogo} className="App-logo" alt="React logo" />
+          </a>
+        </div>
 
-          <ContextButtons />
-          <ReducerButtons />
-          <Inputs />
-          <Button
-            onMouseUp={() => {
-              console.log("Mouse Up");
-            }}
-            onMouseDown={(value) => {
-              console.log(value);
-            }}
-            onMouseOut={() => {
-              console.log("Mouse Out");
-            }}
-            onMouseOver={(value) => {
-              console.log(value);
-            }}
-            onClick={(e) => {
-              e.preventDefault();
-              console.log("e:", e);
-            }}
-          />
+        <UserSearch />
+        <GuestList />
+        <p>
+          Edit <code>src/App.tsx</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
 
-          <header className="App-header">
-            <ButtonFC
-              onClick={(e) => {
-                e.preventDefault();
-                setShow(!show);
+        <ButtonFC
+          onClick={(e) => {
+            e.preventDefault();
+            setShowGlobal(!showGlobal);
+          }}
+        >
+          {showGlobal ? "Show" : "Hide"} Global Content
+        </ButtonFC>
+      </header>
+
+      {!showGlobal && (
+        <GlobalProvider>
+          <>
+            <Header user={{ name: "Francis" }} title="ReactTS" isActive />
+            <ClassComponent title="Class Title" />
+            <ClassComponentInterface users={users} />
+
+            <ContextButtons />
+            <ReducerButtons />
+            <Inputs />
+            <Button
+              onMouseUp={() => console.log("Mouse Up")}
+              onMouseDown={(value) => console.log(value)}
+              onMouseOut={() => console.log("Mouse Out")}
+              onMouseOver={(value) => console.log(value)}
+              onClick={(event) => {
+                event.preventDefault();
+                console.log("Event:", event);
               }}
-            >
-              {show ? (
-                <img src={logo} className="App-logo" alt="logo" />
-              ) : (
-                "Child Button"
-              )}
-            </ButtonFC>
-            <p>
-              Edit <code>src/App.tsx</code> and save to reload.
-            </p>
-            <a
-              className="App-link"
-              href="https://reactjs.org"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn React
-            </a>
-          </header>
-        </>
-      </GlobalProvider>
+            />
+          </>
+        </GlobalProvider>
+      )}
     </div>
   );
 }

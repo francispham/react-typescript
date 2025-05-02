@@ -1,6 +1,5 @@
 import { useContext } from "react";
-
-import { GlobalContext } from "./GlobalState";
+import { GlobalContext } from "./GlobalContext";
 
 export const ContextButtons = () => {
   const context = useContext(GlobalContext);

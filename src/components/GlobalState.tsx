@@ -1,8 +1,6 @@
-import { createContext, ReactNode, useReducer } from "react";
+import { ReactNode, useReducer } from "react";
 import { initialValues } from "../constants";
-
-// eslint-disable-next-line react-refresh/only-export-components
-export const GlobalContext = createContext(initialValues);
+import { GlobalContext } from "./GlobalContext";
 
 // https://www.educba.com/typescript-type-vs-interface/
 interface State {

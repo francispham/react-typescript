@@ -1,8 +1,8 @@
 import { useReducer, useRef, useContext } from "react";
 import styled from "styled-components";
 
-import { GlobalContext } from "./GlobalState";
 import { useClickOutside } from "../hooks/useClickOutside";
+import { GlobalContext } from "./GlobalContext";
 
 const initialState = { rValue: true };
 

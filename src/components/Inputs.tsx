@@ -10,7 +10,7 @@ export const Inputs = () => {
     const ref = useRef<HTMLInputElement | null>(null);     
   */
 
-  console.log("ref:", ref?.current?.value);
+  console.log("HTMLInputElement: ", ref?.current?.value);
 
   return (
     <>

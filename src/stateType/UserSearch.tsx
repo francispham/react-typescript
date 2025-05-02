@@ -11,11 +11,11 @@ const UserSearch: React.FC = () => {
   }, []);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log("event:", event);
+    console.log("ChangeEvent:", event);
     setName(event.target.value);
   };
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("event:", event);
+    console.log("MouseEvent:", event);
     const foundUser = users.find((user) => {
       return user.name === name;
     });
@@ -23,7 +23,7 @@ const UserSearch: React.FC = () => {
   };
 
   const handleDragStart = (event: React.DragEvent<HTMLDivElement>) =>
-    console.log("event:", event);
+    console.log("DragEvent:", event);
 
   return (
     <div>

@@ -8,7 +8,7 @@ const GuestList: React.FC = () => {
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) =>
     setName(event.target.value);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
-    console.log("event:", event);
+    console.log("MouseEvent:", event);
     setName("");
     setGuests([...guests, name]);
   };
